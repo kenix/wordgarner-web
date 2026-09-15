@@ -98,11 +98,32 @@
     // the website cannot know them, and asking somebody to copy them by
     // hand is asking for the report without them. First-party and inline:
     // nothing here is fetched from anyone else.
+    //
+    // `k` picks the kind and `m` fills in the message, both for the one
+    // report the app can start on the reader's behalf: a share it could not
+    // make sense of. They land in the ordinary fields, editable and in
+    // plain view, which is the same rule the details follow — what you can
+    // see is exactly what goes, and anything in there can be deleted before
+    // it is sent.
     (function () {
-      var details = new URLSearchParams(location.search).get('d');
-      if (!details) return;
-      document.getElementById('diagnostics').value = details;
-      document.getElementById('diagnostics-panel').hidden = false;
+      var query = new URLSearchParams(location.search);
+
+      var details = query.get('d');
+      if (details) {
+        document.getElementById('diagnostics').value = details;
+        document.getElementById('diagnostics-panel').hidden = false;
+      }
+
+      var kind = query.get('k');
+      var kinds = document.getElementById('kind');
+      if (kind) {
+        for (var i = 0; i < kinds.options.length; i++) {
+          if (kinds.options[i].value === kind) kinds.selectedIndex = i;
+        }
+      }
+
+      var message = query.get('m');
+      if (message) document.getElementById('message').value = message;
     })();
   </script>
 

@@ -39,6 +39,14 @@ python3 -m http.server 8000     # preview at http://localhost:8000
   read-only field so the user sees exactly what will be sent. The browser
   cannot be asked for the app version, and asking a person to copy it by
   hand is asking for the report without it.
+  **`k` and `m` fill in the kind and the message the same way**, for the one
+  report the app can start on somebody's behalf: a share whose format it
+  could not make sense of, where the useful thing to send is the text that
+  arrived and the app is the only thing holding it. Unlike `d` they land in
+  the ordinary editable fields, because they are the reader's message and
+  not a fact about their install — the same rule either way: what you can
+  see is exactly what goes, and anything there can be deleted before Send.
+  An unknown `k` is ignored rather than an error; these arrive from a URL.
 - **Hosted on GitHub Pages** at the apex-style custom domain in `CNAME`.
   `.nojekyll` is there so the build never second-guesses the file layout.
 - **One stylesheet, light and dark**, driven by `prefers-color-scheme`.
