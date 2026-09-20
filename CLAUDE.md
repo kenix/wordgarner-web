@@ -136,12 +136,21 @@ forward, and it is a promise as much as a plan: a hosted engine and hosted
 storage would be **optional**, and this page is updated **before** either
 ships. Do not soften either half.
 
+It now also promises, in as many words, that **signing in is never a
+prerequisite for using the app** — no sign-in wall, asked once at the moment
+something hosted is requested, never again if declined, and everything else
+working with no account at all. That is a commitment made in public before
+the thing exists, which is the only order in which such a commitment means
+anything. It constrains the hosted service, not the other way round.
+
 The claims that would break first:
 
 - "no account and no server"
 - "no analytics, advertising or tracking"
-- "the only data that ever leaves your device is text you asked to have
-  translated"
+- "only two things ever leave your device, and you ask for both" — text to
+  a provider, and a dictionary pack from GitHub. It was *one* thing until the
+  packs shipped, and the summary panel said so; a third flow breaks the
+  sentence again.
 - "the daily reminder is a local notification … there is no push service"
 - "this site sets no cookies, runs no analytics and loads nothing from
   anybody else: no third-party scripts, and no font network" — the

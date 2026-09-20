@@ -28,7 +28,7 @@
 <main class="wrap">
 
   <h1>Privacy policy</h1>
-  <p class="updated">Last updated 12 September 2026. Applies to the Word Garner
+  <p class="updated">Last updated 20 September 2026. Applies to the Word Garner
     mobile app (<code>org.zhware.wordgarner</code>) for iOS and Android, and to
     this website.</p>
 
@@ -36,9 +36,11 @@
     <p><strong>The short version.</strong> Word Garner has no account and no
       server. Your vocabulary, your settings and your backups live on your
       phone. We collect nothing, we store nothing about you, and there is no
-      analytics, advertising or tracking in the app. The only data that ever
-      leaves your device is text you have asked to have translated, sent
-      directly to the AI provider you chose, using your own API key.</p>
+      analytics, advertising or tracking in the app. Only two things ever
+      leave your device, and you ask for both: text you sent to be translated,
+      which goes directly to the AI provider you chose using your own API key;
+      and a dictionary file you chose to download, which is public data and
+      carries nothing about you.</p>
   </div>
 
   <h2>Who is responsible</h2>
@@ -106,11 +108,37 @@
     at any time in Settings, and the app falls back to on-device translation.
   </p>
 
+  <h3>Dictionary packs (when you ask for one)</h3>
+  <p>
+    Word Garner can show a word's gender, its irregular forms and how it is
+    said, read from a dictionary file kept on your phone. English and German
+    are built into the app. For any other language, Settings ▸ Languages
+    offers to download that language's file, and nothing is fetched until you
+    tap it.
+  </p>
+  <p>
+    The files are public data — derived from Wikidata and Wiktionary — and are
+    hosted as ordinary downloads on GitHub. Two things go out when you tap:
+  </p>
+  <ul>
+    <li>a request for a small index file listing what is available;</li>
+    <li>a request for the dictionary file itself.</li>
+  </ul>
+  <p>
+    Nothing about you or your vocabulary is sent. The request carries no
+    account, no identifier and no word you captured — it is the same request
+    anyone would make for a public file, and GitHub sees what any web server
+    sees when you fetch something: your IP address and the name of the file.
+    A downloaded pack stays on your phone, is used offline, and can be removed
+    in the same place it was added.
+  </p>
+
   <h3>Nothing else</h3>
   <p>
-    There is no other network activity. Word Garner does not check in, does not
-    report usage, and works entirely offline once your language models are
-    downloaded and if no AI provider is configured.
+    There is no other network activity. Word Garner does not check in and does
+    not report usage. With your language models downloaded, any dictionary
+    packs you wanted already fetched, and no AI provider configured, it works
+    entirely offline.
   </p>
 
   <h2>Notifications</h2>
@@ -183,9 +211,9 @@
 
   <h2>What might change, and what would not</h2>
   <p>
-    Everything above describes the app as it is today: no account, no server,
-    nothing of yours held anywhere but your own phone. Two things are being
-    considered for later, and both would be <em>optional</em>:
+    Everything above describes the app as it is today: no account, no server
+    of ours, nothing of yours held anywhere but your own phone. Two things are
+    being built for later, and both would be <em>optional</em>:
   </p>
   <ul>
     <li><strong>A hosted engine</strong> — translations and explanations from
@@ -194,14 +222,45 @@
     <li><strong>Hosted storage</strong> — a copy of your vocabulary kept for
       you, so a new phone can pick it up where the old one left off.</li>
   </ul>
+
+  <h3>Signing in would be opt-in, and only for those</h3>
   <p>
-    Either would need an account, and an account would need an email address —
-    so either would mean we hold something about you for the first time. Two
-    promises hold whatever happens: <strong>the device and your own API key
-    stay first-class</strong>, so nothing hosted ever becomes the only way to
-    use the app; and <strong>this page is updated before any of it ships</strong>,
-    with what is collected, why, and how to get rid of it. Until you read that
-    here, the answer is still no account and no server.
+    Either would need an account, so this is worth being exact about now,
+    before it exists:
+  </p>
+  <ul>
+    <li><strong>Signing in is never a prerequisite for using Word Garner.</strong>
+      There is no sign-in wall, no account needed to capture a word, and no
+      screen you have to get past to start. Capturing, translating on the
+      device, dictionary packs, the quiz, search, statistics, export and
+      backup all work with no account at all, and always will.</li>
+    <li><strong>You would be asked once, at the moment you asked for
+      something hosted</strong> — not on first launch, not in a banner, and
+      not again if you decline. Declining leaves every other part of the app
+      exactly as it was.</li>
+    <li><strong>It would be Sign in with Apple or Sign in with Google, and
+      there would be no password.</strong> We would never see or store one,
+      because there would be nothing to store: your identity would stay with
+      Apple or Google, and we would hold only the anonymous identifier they
+      give us for you, plus an email address for contacting you about your own
+      account. Apple's <em>Hide My Email</em> works normally, so you need not
+      give us a real address at all.</li>
+    <li><strong>Deleting the account would delete it</strong> — the identifier,
+      the email, and anything the hosted service kept — from one place in
+      Settings, without writing to anybody.</li>
+  </ul>
+  <p>
+    The hosted engine would send a provider the text you asked about, in the
+    same way an API key of your own does today, except billed to us instead of
+    you. We would name that provider here, say what they keep and for how
+    long, and say what we log — before any of it ships, not after.
+  </p>
+  <p>
+    Two promises hold whatever happens: <strong>the device and your own API
+    key stay first-class</strong>, so nothing hosted ever becomes the only way
+    to use the app; and <strong>this page is updated before any of it
+    ships</strong>, with what is collected, why, and how to get rid of it.
+    Until you read that here, the answer is still no account and no server.
   </p>
 
   <h2>Changes</h2>
