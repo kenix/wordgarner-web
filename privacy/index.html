@@ -28,19 +28,23 @@
 <main class="wrap">
 
   <h1>Privacy policy</h1>
-  <p class="updated">Last updated 20 September 2026. Applies to the Word Garner
+  <p class="updated">Last updated 21 September 2026. Applies to the Word Garner
     mobile app (<code>org.zhware.wordgarner</code>) for iOS and Android, and to
     this website.</p>
 
   <div class="panel">
-    <p><strong>The short version.</strong> Word Garner has no account and no
-      server. Your vocabulary, your settings and your backups live on your
-      phone. We collect nothing, we store nothing about you, and there is no
-      analytics, advertising or tracking in the app. Only two things ever
-      leave your device, and you ask for both: text you sent to be translated,
-      which goes directly to the AI provider you chose using your own API key;
-      and a dictionary file you chose to download, which is public data and
-      carries nothing about you.</p>
+    <p><strong>The short version.</strong> Word Garner works with no account
+      at all, and that is the ordinary way to use it. Your vocabulary, your
+      settings and your backups live on your phone. There is no analytics,
+      advertising or tracking. Three things can ever leave your device, and
+      you ask for each of them: text you sent to be translated, which goes
+      either straight to the AI provider you chose using your own API key or
+      — only if you sign in — through a small service of ours; and a
+      dictionary file you chose to download, which is public data and carries
+      nothing about you. <strong>If you never sign in, we store nothing about
+      you whatsoever.</strong> If you do, we store an anonymous identifier
+      and how many requests it made today, and you can delete both from
+      Settings.</p>
   </div>
 
   <h2>Who is responsible</h2>
@@ -108,6 +112,82 @@
     at any time in Settings, and the app falls back to on-device translation.
   </p>
 
+  <h3 id="hosted">Word Garner’s own service (only if you sign in)</h3>
+  <p>
+    Instead of obtaining an API key of your own, you may sign in and let Word
+    Garner’s own service do the work. This is <strong>optional</strong>, you
+    are asked about it once — at the moment you tap something that needs it —
+    and declining leaves every other part of the app exactly as it was.
+    Capturing, translating on the device, dictionary packs, the quiz, search,
+    statistics, export and backup all work with no account at all, and always
+    will.
+  </p>
+  <p><strong>What the service is sent.</strong> Only when you ask it for
+    something, and only what that question needs:</p>
+  <ul>
+    <li>the word, phrase or sentence the question is about — the text you
+      captured when it is being translated, and the translation itself when
+      you ask what it means, how it is said, or for an example;</li>
+    <li>the sentence you noted it came from, if any, as context;</li>
+    <li>the two language codes when translating, or the one when not;</li>
+    <li>what your own dictionary already knew about the word, so the reply can
+      leave it out.</li>
+  </ul>
+  <p>
+    <strong>Nothing is ever sent without a tap.</strong> Capturing a word does
+    not reach the service: a capture is translated, and an explanation, an
+    example or a pronunciation is bought only when you ask for it. Requests
+    are never queued for later — if you are offline, the app says so rather
+    than sending it when you next have signal.
+  </p>
+  <p><strong>Who else sees it.</strong> The service passes your question to
+    <strong>OpenAI</strong>, which is the sub-processor behind it, and returns
+    the answer. We send OpenAI the text above and nothing that identifies you:
+    no account, no address, no device identifier. OpenAI’s handling of API
+    traffic is governed by their own terms — at the time of writing they state
+    that API content is not used to train their models, and they retain it for
+    a limited period for abuse monitoring. Please read
+    <a href="https://openai.com/policies/">their policies</a> if that matters
+    to you. If we ever change provider, this page says so before the change
+    ships.</p>
+  <p><strong>What the service keeps about you.</strong> Deliberately almost
+    nothing, and there is no row anywhere with your name on it:</p>
+  <ul>
+    <li><strong>An anonymous identifier.</strong> Apple or Google gives us a
+      subject id when you sign in; we do not store it. We hash it together
+      with the provider’s name and keep only that hash, which is what counts
+      your daily allowance. It cannot be turned back into your account.</li>
+    <li><strong>A number.</strong> How many requests that identifier has made
+      today, so the free allowance can be enforced. It expires on its own
+      after two days.</li>
+    <li><strong>Your email address is not sent and not stored.</strong> Apple
+      or Google hands it to the <em>app</em> when you first sign in, and it
+      stays on your phone, in the Keychain, so Settings can show who is signed
+      in. The service never receives it. Apple’s <em>Hide My Email</em> works
+      normally, and makes no difference to us either way.</li>
+    <li><strong>No password</strong>, because there is no password: your
+      identity stays with Apple or Google.</li>
+  </ul>
+  <p><strong>What the service logs.</strong> One line per answer, carrying the
+    kind of question, the language codes, a one-way digest of the text, the
+    anonymous identifier, and what the request cost in tokens. <strong>The
+    text itself is never logged</strong> — the digest exists so we can count
+    how often the same word is asked about, which is the only thing we want
+    to know, and it cannot be read back into the word.</p>
+  <p><strong>Deleting the account.</strong> Settings ▸ Account ▸ Delete
+    account. It removes the identifier and the counter, and revokes the Sign
+    in with Apple grant so Apple no longer lists Word Garner among your
+    sign-ins. You are asked to sign in once more to confirm, because revoking
+    requires it and because it is not a thing to do by accident. Your words,
+    translations, history and backups are on your phone and are not touched.
+    For Google there is no grant for us to revoke — we only ever verified a
+    token — so the app says so and points you at your Google account page if
+    you want to remove it there too.</p>
+  <p>
+    Signing out, in the same place, ends the session on that phone and leaves
+    the account alone.
+  </p>
+
   <h3>Dictionary packs (when you ask for one)</h3>
   <p>
     Word Garner can show a word's gender, its irregular forms and how it is
@@ -137,8 +217,8 @@
   <p>
     There is no other network activity. Word Garner does not check in and does
     not report usage. With your language models downloaded, any dictionary
-    packs you wanted already fetched, and no AI provider configured, it works
-    entirely offline.
+    packs you wanted already fetched, no AI provider configured and nobody
+    signed in, it works entirely offline.
   </p>
 
   <h2>Notifications</h2>
@@ -202,65 +282,45 @@
     <li><strong>Delete it</strong> — delete individual entries in the app, or
       uninstall the app to remove everything, including backups and your stored
       API key.</li>
+    <li><strong>Delete the account</strong> — if you signed in, Settings ▸
+      Account ▸ Delete account removes everything our service holds and
+      revokes the sign-in, without writing to anybody.</li>
   </ul>
   <p>
-    Because we hold no data about you, there is nothing for us to hand over,
-    correct or erase on request. Requests concerning data held by an AI provider
+    Unless you signed in, we hold no data about you at all, so there is nothing
+    for us to hand over, correct or erase on request. If you did sign in, what
+    we hold is an anonymous identifier and a daily counter, and the delete
+    button above removes both; you are welcome to write to us instead.
+    Requests concerning data held by an AI provider you configured yourself
     must be made to that provider.
   </p>
 
   <h2>What might change, and what would not</h2>
   <p>
-    Everything above describes the app as it is today: no account, no server
-    of ours, nothing of yours held anywhere but your own phone. Two things are
-    being built for later, and both would be <em>optional</em>:
+    Everything above describes the app as it is today. One thing is still
+    being built, and it would be <em>optional</em> in exactly the way the
+    hosted service already is:
   </p>
   <ul>
-    <li><strong>A hosted engine</strong> — translations and explanations from
-      a service we run, for people who would rather not obtain an API key of
-      their own.</li>
     <li><strong>Hosted storage</strong> — a copy of your vocabulary kept for
-      you, so a new phone can pick it up where the old one left off.</li>
-  </ul>
-
-  <h3>Signing in would be opt-in, and only for those</h3>
-  <p>
-    Either would need an account, so this is worth being exact about now,
-    before it exists:
-  </p>
-  <ul>
-    <li><strong>Signing in is never a prerequisite for using Word Garner.</strong>
-      There is no sign-in wall, no account needed to capture a word, and no
-      screen you have to get past to start. Capturing, translating on the
-      device, dictionary packs, the quiz, search, statistics, export and
-      backup all work with no account at all, and always will.</li>
-    <li><strong>You would be asked once, at the moment you asked for
-      something hosted</strong> — not on first launch, not in a banner, and
-      not again if you decline. Declining leaves every other part of the app
-      exactly as it was.</li>
-    <li><strong>It would be Sign in with Apple or Sign in with Google, and
-      there would be no password.</strong> We would never see or store one,
-      because there would be nothing to store: your identity would stay with
-      Apple or Google, and we would hold only the anonymous identifier they
-      give us for you, plus an email address for contacting you about your own
-      account. Apple's <em>Hide My Email</em> works normally, so you need not
-      give us a real address at all.</li>
-    <li><strong>Deleting the account would delete it</strong> — the identifier,
-      the email, and anything the hosted service kept — from one place in
-      Settings, without writing to anybody.</li>
+      you, so a new phone can pick it up where the old one left off. It does
+      not exist yet, and nothing of yours is stored anywhere but your own
+      phone until this page says otherwise.</li>
   </ul>
   <p>
-    The hosted engine would send a provider the text you asked about, in the
-    same way an API key of your own does today, except billed to us instead of
-    you. We would name that provider here, say what they keep and for how
-    long, and say what we log — before any of it ships, not after.
+    The hosted engine used to sit in this list. It now exists, and
+    <a href="#hosted">what it sends, what it keeps and how to delete it</a> is
+    written above rather than promised here — which is what this section
+    said would happen.
   </p>
   <p>
-    Two promises hold whatever happens: <strong>the device and your own API
-    key stay first-class</strong>, so nothing hosted ever becomes the only way
-    to use the app; and <strong>this page is updated before any of it
-    ships</strong>, with what is collected, why, and how to get rid of it.
-    Until you read that here, the answer is still no account and no server.
+    Three promises hold whatever happens. <strong>Signing in is never a
+    prerequisite for using Word Garner</strong>: there is no sign-in wall, no
+    account needed to capture a word, and no screen to get past to start.
+    <strong>The device and your own API key stay first-class</strong>, so
+    nothing hosted ever becomes the only way to use the app. And <strong>this
+    page is updated before anything ships, not after</strong> — as it was for
+    the hosted engine.
   </p>
 
   <h2>Changes</h2>

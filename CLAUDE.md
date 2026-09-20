@@ -125,6 +125,16 @@ suffix and a trailing slash works.
 | Contact email (Google) | `wordgarner.support@zhware.org` |
 | EULA (Apple, optional) | `https://wordgarner.zhware.org/terms/` |
 
+**Both stores' data answers change the moment the hosted engine is enabled
+in a shipped build**, and they have to agree with `/privacy/#hosted` word
+for word. What to declare: an *account* linked to the user (the anonymous
+identifier), *app functionality* as the only purpose, no tracking, no
+advertising, and user-generated content — the captured text — sent to a
+sub-processor and not linked to an identity. Apple additionally requires
+that an app offering account creation offers account deletion **in the
+app**; Settings ▸ Account ▸ Delete account is that, and it revokes the Sign
+in with Apple grant, which is a separate review requirement.
+
 ## Keeping it true
 
 The privacy policy is a factual claim about the app, not boilerplate. If the
@@ -132,25 +142,40 @@ app ever gains an account, an analytics SDK, a crash reporter, a push
 notification, or a server of its own, **this page is wrong until it is
 changed**, and the store listing's data-safety answers are wrong with it.
 The privacy page's *What might change* section is the one place that looks
-forward, and it is a promise as much as a plan: a hosted engine and hosted
-storage would be **optional**, and this page is updated **before** either
-ships. Do not soften either half.
+forward, and it is a promise as much as a plan: anything hosted is
+**optional**, and this page is updated **before** it ships. Do not soften
+either half.
 
-It now also promises, in as many words, that **signing in is never a
+**The hosted engine has now shipped, and the promise was kept.** It moved
+out of *What might change* and into *What leaves your device* as a section
+that says what is sent, who else sees it (OpenAI, named), what is kept (an
+anonymous identifier and a daily counter, both expiring), what is logged (a
+digest, never the text) and how to delete the account. The forward-looking
+section keeps hosted storage alone, and now points at the shipped section as
+evidence that the order holds. **Write the page before the build, every
+time** — the one order in which such a commitment means anything.
+
+It also promises, in as many words, that **signing in is never a
 prerequisite for using the app** — no sign-in wall, asked once at the moment
 something hosted is requested, never again if declined, and everything else
-working with no account at all. That is a commitment made in public before
-the thing exists, which is the only order in which such a commitment means
-anything. It constrains the hosted service, not the other way round.
+working with no account at all. That constrains the hosted service, not the
+other way round, and the app is built to it.
 
 The claims that would break first:
 
-- "no account and no server"
 - "no analytics, advertising or tracking"
-- "only two things ever leave your device, and you ask for both" — text to
-  a provider, and a dictionary pack from GitHub. It was *one* thing until the
-  packs shipped, and the summary panel said so; a third flow breaks the
-  sentence again.
+- "three things can ever leave your device, and you ask for each of them" —
+  text to a provider with your own key, text through our service once you
+  sign in, and a dictionary pack from GitHub. It was *one* until the packs
+  shipped and *two* until the hosted engine did, and the summary panel has
+  had to be recounted each time. A fourth flow breaks the sentence again.
+- "your email address is not sent and not stored" — it is handed to the
+  *app* by Apple or Google and stays in the Keychain. The service never
+  receives it, and the moment it does this line is false.
+- "the text itself is never logged" — the usage log carries a digest so
+  repeats can be counted. Logging the word instead breaks it.
+- "OpenAI" as the named sub-processor. Changing provider means changing
+  this page first.
 - "the daily reminder is a local notification … there is no push service"
 - "this site sets no cookies, runs no analytics and loads nothing from
   anybody else: no third-party scripts, and no font network" — the
