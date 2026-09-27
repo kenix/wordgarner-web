@@ -171,11 +171,14 @@ other way round, and the app is built to it.
 The claims that would break first:
 
 - "no analytics, advertising or tracking"
-- "three things can ever leave your device, and you ask for each of them" —
-  text to a provider with your own key, text through our service once you
-  sign in, and a dictionary pack from GitHub. It was *one* until the packs
-  shipped and *two* until the hosted engine did, and the summary panel has
-  had to be recounted each time. A fourth flow breaks the sentence again.
+- "two things can ever leave your device, and you ask for each of them" —
+  text through Lexis once you sign in, and a dictionary pack from GitHub.
+  It was *one* until the packs shipped, *three* while the app also took an
+  API key of the reader's own, and *two* again since keys were removed on
+  2026-09-27. The summary panel has had to be recounted each time; a new
+  flow breaks the sentence again.
+- "the app no longer takes an API key of your own" — on the privacy, terms,
+  home and support pages. Keys coming back means all four change first.
 - "your email address is not sent and not stored" — it is handed to the
   *app* by Apple or Google and stays in the Keychain. The service never
   receives it, and the moment it does this line is false.

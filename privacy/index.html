@@ -36,12 +36,11 @@
     <p><strong>The short version.</strong> Word Garner works with no account
       at all, and that is the ordinary way to use it. Your vocabulary, your
       settings and your backups live on your phone. There is no analytics,
-      advertising or tracking. Three things can ever leave your device, and
-      you ask for each of them: text you sent to be translated, which goes
-      either straight to the AI provider you chose using your own API key or
-      — only if you sign in — through a small service of ours; and a
-      dictionary file you chose to download, which is public data and carries
-      nothing about you. <strong>If you never sign in, we store nothing about
+      advertising or tracking. Words are translated on the phone itself. Two
+      things can ever leave your device, and you ask for each of them: text
+      you asked Lexis, Word Garner’s own small service, about — only if you
+      sign in; and a dictionary file you chose to download, which is public
+      data and carries nothing about you. <strong>If you never sign in, we store nothing about
       you whatsoever.</strong> If you do, we store an anonymous identifier
       and how many requests it made today — and, if you signed up with an
       email address rather than Apple or Google, a one-way hash of that
@@ -72,9 +71,10 @@
     <li><strong>Backups</strong> — the app writes periodic JSON exports of your
       vocabulary into its own documents folder on the device. They are not
       uploaded anywhere.</li>
-    <li><strong>Your API key</strong>, if you add one — held in the iOS
-      Keychain or the Android encrypted preference store, and sent only to the
-      provider it belongs to.</li>
+    <li><strong>Your sign-in</strong>, if you sign in — a session token held
+      in the iOS Keychain or the Android encrypted preference store. Earlier
+      versions of the app could hold an API key of yours there; the current
+      version deletes any such key the first time it starts.</li>
   </ul>
   <p>
     Word Garner does not collect your name, email address, phone number, contacts,
@@ -96,29 +96,12 @@
     device.
   </p>
 
-  <h3>AI providers (only if you set one up)</h3>
+  <h3 id="hosted">Lexis, Word Garner’s own service (only if you sign in)</h3>
   <p>
-    You may optionally configure an AI provider — DeepSeek, OpenAI, Google
-    Gemini or Anthropic — by entering an API key you obtained
-    yourself. When one is configured, Word Garner sends that provider:
-  </p>
-  <ul>
-    <li>the word, phrase or sentence you captured;</li>
-    <li>the source you noted for it, if any, which is sent as context;</li>
-    <li>the languages you have configured.</li>
-  </ul>
-  <p>
-    The request goes directly from your phone to that provider. It does not
-    pass through any server of ours. What the provider does with it is governed
-    by <em>their</em> privacy policy and the terms of the account your key
-    belongs to — please read them before entering a key. You can remove the key
-    at any time in Settings, and the app falls back to on-device translation.
-  </p>
-
-  <h3 id="hosted">Word Garner’s own service (only if you sign in)</h3>
-  <p>
-    Instead of obtaining an API key of your own, you may sign in and let Word
-    Garner’s own service do the work. This is <strong>optional</strong>, you
+    Pronunciations, explanations and example sentences, and a translation the
+    device could not make, come from Lexis, Word Garner’s own service, if you
+    sign in and ask for them. There is no other way to them: the app no
+    longer takes an API key of your own. This is <strong>optional</strong>, you
     are asked about it once — at the moment you tap something that needs it —
     and declining leaves every other part of the app exactly as it was.
     Capturing, translating on the device, dictionary packs, the quiz, search,
@@ -164,8 +147,8 @@
       with the provider’s name and keep only that hash, which is what counts
       your daily allowance. It cannot be turned back into your account. An
       email account gets a random identifier instead, hashed the same way.</li>
-    <li><strong>A number.</strong> How many requests that identifier has made
-      today, so the free allowance can be enforced. It expires on its own
+    <li><strong>A number.</strong> How many answers that identifier has asked
+      for today, so the free allowance can be enforced. It expires on its own
       after two days.</li>
     <li><strong>With Apple or Google, your email address is not sent and not
       stored.</strong> Apple or Google hands it to the <em>app</em> when you
@@ -247,8 +230,8 @@
   <p>
     There is no other network activity. Word Garner does not check in and does
     not report usage. With your language models downloaded, any dictionary
-    packs you wanted already fetched, no AI provider configured and nobody
-    signed in, it works entirely offline.
+    packs you wanted already fetched and nobody signed in, it works entirely
+    offline.
   </p>
 
   <h2>Notifications</h2>
@@ -272,9 +255,8 @@
     If you email support, we receive whatever you put in that email — typically
     your email address, your description of the problem, and any diagnostics you
     chose to paste in. The diagnostics the app can copy for you contain the app
-    version, the platform, your configured language codes, the name of the AI
-    provider and model you selected, and how many entries you have. They never
-    contain your API key, and they never contain your vocabulary.
+    version, the platform, your configured language codes, and how many entries
+    you have. They never contain your vocabulary.
   </p>
   <p>
     Support mail is used only to answer you, is never used for marketing, is
@@ -310,8 +292,7 @@
     <li><strong>Take it</strong> — export your whole vocabulary to a file (JSON
       inside), or to an Anki deck, from Settings.</li>
     <li><strong>Delete it</strong> — delete individual entries in the app, or
-      uninstall the app to remove everything, including backups and your stored
-      API key.</li>
+      uninstall the app to remove everything, including backups.</li>
     <li><strong>Delete the account</strong> — if you signed in, Settings ▸
       Account ▸ Delete account removes everything our service holds and
       revokes the sign-in, without writing to anybody.</li>
@@ -322,8 +303,6 @@
     we hold is an anonymous identifier and a daily counter — plus, for an
     email account, the hashed address and password — and the delete button
     above removes all of it; you are welcome to write to us instead.
-    Requests concerning data held by an AI provider you configured yourself
-    must be made to that provider.
   </p>
 
   <h2>What might change, and what would not</h2>
@@ -348,8 +327,8 @@
     Three promises hold whatever happens. <strong>Signing in is never a
     prerequisite for using Word Garner</strong>: there is no sign-in wall, no
     account needed to capture a word, and no screen to get past to start.
-    <strong>The device and your own API key stay first-class</strong>, so
-    nothing hosted ever becomes the only way to use the app. And <strong>this
+    <strong>Translation on the device stays free and needs no account</strong>,
+    so nothing hosted ever becomes the only way to use the app. And <strong>this
     page is updated before anything ships, not after</strong> — as it was for
     the hosted engine.
   </p>

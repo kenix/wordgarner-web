@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Support — Word Garner</title>
-<meta name="description" content="Help with Word Garner: contact, API keys, translation problems, backups and exports.">
+<meta name="description" content="Help with Word Garner: contact, Lexis and accounts, translation problems, backups and exports.">
 <link rel="canonical" href="https://wordgarner.zhware.org/support/">
 <link rel="icon" href="/favicon.ico?v=2" sizes="32x32">
 <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
@@ -47,8 +47,7 @@
       Please include your phone and OS version, the app version (Settings ▸
       About), and what you did just before the problem. If it is about a
       translation, Settings ▸ About ▸ <em>Copy diagnostics</em> puts the useful
-      details on your clipboard — it never includes your API key or your
-      vocabulary.
+      details on your clipboard — it never includes your vocabulary.
     </p>
     <p>
       Expect a reply within a few days. This is a one-person project, so
@@ -59,26 +58,29 @@
   <h2>Common questions</h2>
 
   <details>
-    <summary>Do I need an API key to use Word Garner?</summary>
+    <summary>Do I need an account or an API key to use Word Garner?</summary>
     <p>
-      No. Word Garner translates on the device first, using the translation engine
+      No. Word Garner translates on the device, using the translation engine
       built into your phone. That is free, works offline, and needs no account.
-      An API key buys the things a machine translator cannot give you — the
-      pronunciation, the short explanation and the example sentence.
+      There is no API key to get at all: the app stopped taking one on
+      27 September 2026, and deletes any key an older version stored.
     </p>
   </details>
 
   <details>
-    <summary>Is there a way to get those without an API key?</summary>
+    <summary>Where do pronunciations, explanations and examples come from?</summary>
     <p>
-      Yes — sign in, and Word Garner’s own service does the work instead. It
-      is optional, you are asked about it once (when you tap something that
-      needs it), and saying no leaves everything else exactly as it was.
-      Sign in with Apple or Sign in with Google; there is no password.
+      From Lexis, Word Garner’s own service — the things a machine translator
+      cannot give you. Sign in to use it: with Apple, with Google, or with an
+      email address and a password. It is optional, you are asked about it
+      once (when you tap something that needs it, or on the Lexis row in
+      Settings ▸ Translation), and saying no leaves everything else exactly as
+      it was.
     </p>
     <p>
-      There is a free allowance each day, and the button tells you what is
-      left before you press it. <strong>Nothing is ever sent without a
+      There is a free allowance each day: every field you ask for counts
+      once, and it starts again at midnight UTC. Settings ▸ Translation shows
+      what is left. <strong>Nothing is ever sent without a
       tap</strong>: capturing a word does not reach the service, and an
       explanation, an example or a pronunciation is bought only when you ask
       for it. Requests are never queued — offline, the app says so rather
@@ -103,30 +105,6 @@
       Your words, translations, history and backups are on your phone and are
       not touched. Signing out, in the same place, just ends the session on
       that phone.
-    </p>
-  </details>
-
-  <details>
-    <summary>How do I get an API key?</summary>
-    <p>
-      Open Settings ▸ Translation service, choose a provider, and use the link there to
-      open that provider’s console. Create a key in your own account, then paste
-      it into the field — it saves itself. <em>Test</em> checks that it works.
-    </p>
-    <p>
-      Keys are pay-as-you-go and you are billed by the provider, not by us.
-      Settings shows roughly what a hundred words costs on the model you picked.
-      DeepSeek is the cheapest of the ones offered and is the default.
-    </p>
-  </details>
-
-  <details>
-    <summary>Where is my key stored? Can you see it?</summary>
-    <p>
-      It is stored in the iOS Keychain or the Android encrypted preference
-      store, on your device. It is sent only to the provider it belongs to, over
-      HTTPS, directly from your phone. We never see it, and it is never included
-      in diagnostics or backups.
     </p>
   </details>
 
@@ -226,10 +204,10 @@
   <details>
     <summary>Will I ever need an account?</summary>
     <p>
-      Not for anything the app does today. A hosted engine, and hosted storage
-      that survives a change of phone, are being considered for later; those
-      would need one. They would be options alongside the device and your own
-      API key, never a replacement, and the
+      Not to capture, translate, revise or export — those never need one.
+      Lexis, for pronunciations, explanations and examples, does. Hosted
+      storage that survives a change of phone is being considered for later
+      and would need one too; the
       <a href="/privacy/">privacy policy</a> is updated before any of it
       ships.
     </p>
@@ -239,9 +217,9 @@
     <summary>How do I delete everything?</summary>
     <p>
       Delete individual words by swiping them away in the list, or uninstall the
-      app to remove everything at once — vocabulary, settings, local backups and
-      your stored API key. Nothing is held on any server, so there is nothing
-      left behind.
+      app to remove everything at once — vocabulary, settings and local backups.
+      If you signed in, delete the account first (Settings ▸ Account), which
+      removes what Lexis holds.
     </p>
   </details>
 
