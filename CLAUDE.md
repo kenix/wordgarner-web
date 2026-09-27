@@ -130,7 +130,11 @@ in a shipped build**, and they have to agree with `/privacy/#hosted` word
 for word. What to declare: an *account* linked to the user (the anonymous
 identifier), *app functionality* as the only purpose, no tracking, no
 advertising, and user-generated content — the captured text — sent to a
-sub-processor and not linked to an identity. Apple additionally requires
+sub-processor and not linked to an identity. **Email accounts add one
+line:** *Contact info ▸ Email address*, collected, linked to the user, for
+*app functionality* (account management) only — even though the service
+keeps only a hash of it, the stores count what is collected, not what is
+stored. Resend is the sub-processor that sends the codes. Apple additionally requires
 that an app offering account creation offers account deletion **in the
 app**; Settings ▸ Account ▸ Delete account is that, and it revokes the Sign
 in with Apple grant, which is a separate review requirement.
@@ -149,7 +153,10 @@ either half.
 **The hosted engine has now shipped, and the promise was kept.** It moved
 out of *What might change* and into *What leaves your device* as a section
 that says what is sent, who else sees it (OpenAI, named), what is kept (an
-anonymous identifier and a daily counter, both expiring), what is logged (a
+anonymous identifier and a daily counter, both expiring — and since
+27 September 2026, for an email account, a hash of the address and an
+Argon2id hash of the password, with Resend named as the sender of the
+codes), what is logged (a
 digest, never the text) and how to delete the account. The forward-looking
 section keeps hosted storage alone, and now points at the shipped section as
 evidence that the order holds. **Write the page before the build, every

@@ -28,7 +28,7 @@
 <main class="wrap">
 
   <h1>Privacy policy</h1>
-  <p class="updated">Last updated 21 September 2026. Applies to the Word Garner
+  <p class="updated">Last updated 27 September 2026. Applies to the Word Garner
     mobile app (<code>org.zhware.wordgarner</code>) for iOS and Android, and to
     this website.</p>
 
@@ -43,7 +43,9 @@
       dictionary file you chose to download, which is public data and carries
       nothing about you. <strong>If you never sign in, we store nothing about
       you whatsoever.</strong> If you do, we store an anonymous identifier
-      and how many requests it made today, and you can delete both from
+      and how many requests it made today — and, if you signed up with an
+      email address rather than Apple or Google, a one-way hash of that
+      address and of your password — and you can delete all of it from
       Settings.</p>
   </div>
 
@@ -76,7 +78,9 @@
   </ul>
   <p>
     Word Garner does not collect your name, email address, phone number, contacts,
-    photos, location, advertising identifier or device identifier. It contains
+    photos, location, advertising identifier or device identifier. The one
+    exception is an email address you choose to sign up with, described
+    <a href="#hosted">below</a>. It contains
     no analytics, crash-reporting or advertising SDK.
   </p>
 
@@ -150,24 +154,49 @@
     <a href="https://openai.com/policies/">their policies</a> if that matters
     to you. If we ever change provider, this page says so before the change
     ships.</p>
+  <p><strong>Three ways to sign in.</strong> With Apple, with Google, or —
+    if you have neither or would rather not use them — with an email address
+    and a password of your own.</p>
   <p><strong>What the service keeps about you.</strong> Deliberately almost
     nothing, and there is no row anywhere with your name on it:</p>
   <ul>
     <li><strong>An anonymous identifier.</strong> Apple or Google gives us a
       subject id when you sign in; we do not store it. We hash it together
       with the provider’s name and keep only that hash, which is what counts
-      your daily allowance. It cannot be turned back into your account.</li>
+      your daily allowance. It cannot be turned back into your account. An
+      email account gets a random identifier instead, hashed the same way.</li>
     <li><strong>A number.</strong> How many requests that identifier has made
       today, so the free allowance can be enforced. It expires on its own
       after two days.</li>
-    <li><strong>Your email address is not sent and not stored.</strong> Apple
-      or Google hands it to the <em>app</em> when you first sign in, and it
-      stays on your phone, in the Keychain, so Settings can show who is signed
-      in. The service never receives it. Apple’s <em>Hide My Email</em> works
-      normally, and makes no difference to us either way.</li>
-    <li><strong>No password</strong>, because there is no password: your
-      identity stays with Apple or Google.</li>
+    <li><strong>With Apple or Google, your email address is not sent and not
+      stored.</strong> Apple or Google hands it to the <em>app</em> when you
+      first sign in, and it stays on your phone, in the Keychain, so Settings
+      can show who is signed in. The service never receives it. Apple’s
+      <em>Hide My Email</em> works normally, and makes no difference to us
+      either way. There is no password: your identity stays with Apple or
+      Google.</li>
+    <li><strong>With an email address, we keep a one-way hash of it, never
+      the address itself</strong> — it is what your account is looked up by
+      when you sign in. Your password is kept only as a salted
+      <a href="https://en.wikipedia.org/wiki/Argon2">Argon2id</a> hash, which
+      cannot be turned back into the password. The address does reach the
+      service each time you register, sign in or reset the password, because
+      that is how we know where to send the code; it is used for that and
+      not kept.</li>
+    <li><strong>Codes and attempt counters</strong>, while they matter. A
+      six-digit confirmation or reset code is valid for 15 minutes and then
+      gone. How many codes an address was sent today, and how many wrong
+      passwords or codes were tried, are counted so nobody can guess their
+      way in or use the form to flood someone’s inbox; each count expires on
+      its own within a day.</li>
   </ul>
+  <p><strong>Who sends the emails.</strong> The confirmation and reset
+    emails are sent by <strong>Resend</strong>, a transactional email service
+    and the second sub-processor behind Word Garner’s service, from its EU
+    region. Resend receives the address the email goes to and the email itself
+    — the code and two sentences — and nothing else about you; see
+    <a href="https://resend.com/legal/privacy-policy">their privacy policy</a>.
+    Apple and Google sign-ins send no email and never reach Resend.</p>
   <p><strong>What the service logs.</strong> One line per answer, carrying the
     kind of question, the language codes, a one-way digest of the text, the
     anonymous identifier, and what the request cost in tokens. <strong>The
@@ -182,7 +211,9 @@
     translations, history and backups are on your phone and are not touched.
     For Google there is no grant for us to revoke — we only ever verified a
     token — so the app says so and points you at your Google account page if
-    you want to remove it there too.</p>
+    you want to remove it there too. For an email account you are asked for
+    the password instead, and the hashed address and password are removed
+    with everything else, so the address can be used to register again.</p>
   <p>
     Signing out, in the same place, ends the session on that phone and leaves
     the account alone.
@@ -289,8 +320,9 @@
   <p>
     Unless you signed in, we hold no data about you at all, so there is nothing
     for us to hand over, correct or erase on request. If you did sign in, what
-    we hold is an anonymous identifier and a daily counter, and the delete
-    button above removes both; you are welcome to write to us instead.
+    we hold is an anonymous identifier and a daily counter — plus, for an
+    email account, the hashed address and password — and the delete button
+    above removes all of it; you are welcome to write to us instead.
     Requests concerning data held by an AI provider you configured yourself
     must be made to that provider.
   </p>
