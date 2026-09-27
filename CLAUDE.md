@@ -179,6 +179,10 @@ The claims that would break first:
   flow breaks the sentence again.
 - "the app no longer takes an API key of your own" — on the privacy, terms,
   home and support pages. Keys coming back means all four change first.
+- "a word up to 40 characters, a phrase 80, a sentence 300; Chinese,
+  Japanese and Korean count twice" — on the home and support pages. These
+  are `CaptureLimits` in the app and `MAX_WORD`/`MAX_PHRASE`/`MAX_SENTENCE`
+  in Lexis; change the pages when those change.
 - "your email address is not sent and not stored" — it is handed to the
   *app* by Apple or Google and stays in the Keychain. The service never
   receives it, and the moment it does this line is false.
