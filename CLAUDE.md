@@ -111,6 +111,7 @@ python3 -m http.server 8000     # preview at http://localhost:8000
 | `assets/fonts/` | The wordmark subset and its `OFL.txt`. The only webfont |
 | `assets/screenshots/` | Store screenshots, as they are taken |
 | `CNAME` | `wordgarner.zhware.org` |
+| `.well-known/apple-app-site-association` | Ties the app to this domain for Password AutoFill (`webcredentials`), so iOS suggests a strong password on email sign-up and saves it. The team id and bundle id must match the app's; `.nojekyll` is what lets Pages serve a dot-directory |
 
 Pages live in directories with an `index.html` so the URLs have no `.html`
 suffix and a trailing slash works.
