@@ -129,8 +129,9 @@ suffix and a trailing slash works.
 **Both stores' data answers change the moment the hosted engine is enabled
 in a shipped build**, and they have to agree with `/privacy/#hosted` word
 for word. What to declare: an *account* linked to the user (the anonymous
-identifier), *app functionality* as the only purpose, no tracking, no
-advertising, and user-generated content — the captured text — sent to a
+identifier), *app functionality* and — since the daily report of
+2026-10-03 counts distinct accounts — *analytics* as its purposes, no
+tracking, no advertising, and user-generated content — the captured text — sent to a
 sub-processor and not linked to an identity. **Email accounts add one
 line:** *Contact info ▸ Email address*, collected, linked to the user, for
 *app functionality* (account management) only — even though the service
