@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy policy — Word Garner</title>
-<meta name="description" content="Word Garner's privacy policy. No account needed, no tracking; your vocabulary never leaves your phone.">
+<meta name="description" content="Word Garner's privacy policy. No account needed, no tracking; your vocabulary stays on your phone, and in your own iCloud only if you turn sync on.">
 <link rel="canonical" href="https://wordgarner.zhware.org/privacy/">
 <link rel="icon" href="/favicon.ico?v=2" sizes="32x32">
 <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
@@ -28,7 +28,7 @@
 <main class="wrap">
 
   <h1>Privacy policy</h1>
-  <p class="updated">Last updated 3 October 2026. Applies to the Word Garner
+  <p class="updated">Last updated 10 October 2026. Applies to the Word Garner
     mobile app (<code>org.zhware.wordgarner</code>) for iOS and Android, and to
     this website.</p>
 
@@ -36,11 +36,13 @@
     <p><strong>The short version.</strong> Word Garner works with no account
       at all, and that is the ordinary way to use it. Your vocabulary, your
       settings and your backups live on your phone. There is no advertising
-      or tracking, and no analytics in the app. Words are translated on the phone itself. Two
+      or tracking, and no analytics in the app. Words are translated on the phone itself. Three
       things can ever leave your device, and you ask for each of them: text
       you asked Lexis, Word Garner’s own small service, about — only if you
-      sign in; and a dictionary file you chose to download, which is public
-      data and carries nothing about you. <strong>If you never sign in, we store nothing about
+      sign in; a dictionary file you chose to download, which is public
+      data and carries nothing about you; and your vocabulary, to <em>your
+      own</em> iCloud — only if you turn on iCloud sync, and never to
+      us. <strong>If you never sign in, we store nothing about
       you whatsoever.</strong> If you do, we store an anonymous identifier
       and how many requests it made today — and, if you signed up with an
       email address rather than Apple or Google, a one-way hash of that
@@ -56,9 +58,10 @@
 
   <h2>What Word Garner stores, and where</h2>
   <p>
-    Everything below is stored <em>only</em> on your device, in the app’s own
-    private storage. None of it is transmitted to us, because there is nowhere
-    to transmit it to.
+    Everything below is stored on your device, in the app’s own private
+    storage — and, only if you turn on <a href="#icloud">iCloud sync</a>, in
+    your own iCloud as well. None of it is transmitted to us, because there is
+    nowhere to transmit it to.
   </p>
   <ul>
     <li><strong>Your vocabulary</strong> — the words, phrases and sentences you
@@ -68,9 +71,10 @@
       quizzed, how often you got it right, and when you last looked at it.</li>
     <li><strong>Your settings</strong> — the languages you study, the interface
       language, theme, reminder time and similar preferences.</li>
-    <li><strong>Backups</strong> — the app writes periodic JSON exports of your
-      vocabulary into its own documents folder on the device. They are not
-      uploaded anywhere.</li>
+    <li><strong>Backups</strong> — the app writes periodic exports of your
+      vocabulary (JSON, compressed) into its own documents folder on the
+      device. They are uploaded nowhere unless you turn on <em>Back up to
+      iCloud Drive</em>, described <a href="#icloud">below</a>.</li>
     <li><strong>Your sign-in</strong>, if you sign in — a session token held
       in the iOS Keychain or the Android encrypted preference store. Earlier
       versions of the app could hold an API key of yours there; the current
@@ -222,6 +226,46 @@
     the account alone.
   </p>
 
+  <h3 id="icloud">iCloud sync and iCloud Drive backup (only if you turn them on)</h3>
+  <p>
+    On iPhone and iPad with iOS 17 or later, Settings ▸ Data ▸ <em>iCloud
+    sync</em> keeps your vocabulary the same on every device signed in to
+    your Apple ID. It is <strong>off by default</strong> and turned on per
+    device. With it off, nothing below happens.
+  </p>
+  <p><strong>What goes to iCloud.</strong> Each word with everything the app
+    holds about it — translations, pronunciations, explanations, examples,
+    notes, tags, the source you noted, and your quiz answers — and the
+    settings that belong to you rather than to the device: your languages,
+    the interface language, tag colours, and whether the filter explains
+    itself. Theme, voices, the reminder, your Lexis sign-in and the like
+    stay on each device.</p>
+  <p><strong>Where it goes.</strong> Into the private CloudKit database of
+    <em>your</em> iCloud account — Apple’s storage, counted against your
+    iCloud plan, readable only when signed in as you. The content of each
+    word is kept in a field iCloud encrypts. <strong>It never reaches us</strong>:
+    Word Garner has no server in this path, we cannot read your iCloud data,
+    and Lexis is not involved. Apple stores it under
+    <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a>.</p>
+  <p><strong>How devices hear about a change.</strong> When one device saves
+    a change, Apple sends your other devices a silent push notification, so
+    the word appears there without you opening anything. It shows nothing
+    on screen and carries none of your words; the device then fetches the
+    change from your iCloud.</p>
+  <p><strong>Turning it off and removing it.</strong> Turning the switch off
+    stops syncing on that device; every word stays on it. <em>Remove from
+    iCloud</em>, in the same place, deletes the copy in iCloud for every
+    device; the words stay on each device. Signing out of iCloud pauses it,
+    and a different Apple ID turns it off rather than mixing two people’s
+    words.</p>
+  <p><strong>iCloud Drive backup.</strong> While sync is on, <em>Back up to
+    iCloud Drive</em> (also off by default, per device) writes a second copy
+    of each automatic backup to <em>iCloud Drive ▸ Word Garner</em>, in a
+    folder named after the device — its name and four characters of an
+    identifier iOS gives the app, so two iPhones both called “iPhone” are
+    told apart. The last three are kept. You can see and delete them in the
+    Files app; they are in your iCloud only, never sent to us.</p>
+
   <h3>Dictionary packs (when you ask for one)</h3>
   <p>
     Word Garner can show a word's gender, its irregular forms and how it is
@@ -252,15 +296,18 @@
   <p>
     There is no other network activity. Word Garner does not check in and does
     not report usage. With your language models downloaded, any dictionary
-    packs you wanted already fetched and nobody signed in, it works entirely
-    offline.
+    packs you wanted already fetched, nobody signed in and iCloud sync off,
+    it works entirely offline.
   </p>
 
   <h2>Notifications</h2>
   <p>
     The optional daily reminder is a local notification scheduled on the device
-    itself. There is no push service and no server involved, and the reminder is
-    only scheduled when something will actually be due when it fires.
+    itself, with no server involved, and it is only scheduled when something
+    will actually be due when it fires. The only push notification is the
+    silent one Apple sends while <a href="#icloud">iCloud sync</a> is on, to
+    say another device changed something; it never appears on screen, needs
+    no permission, and carries none of your words.
   </p>
 
   <h2>Support requests and bug reports</h2>
@@ -314,7 +361,10 @@
     <li><strong>Take it</strong> — export your whole vocabulary to a file (JSON
       inside), or to an Anki deck, from Settings.</li>
     <li><strong>Delete it</strong> — delete individual entries in the app, or
-      uninstall the app to remove everything, including backups.</li>
+      uninstall the app to remove everything on the device, including backups.
+      If you used iCloud sync, Settings ▸ Data ▸ <em>Remove from iCloud</em>
+      deletes the iCloud copy, and backups in iCloud Drive are deleted in the
+      Files app.</li>
     <li><strong>Delete the account</strong> — if you signed in, Settings ▸
       Account ▸ Delete account removes everything our service holds and
       revokes the sign-in, without writing to anybody.</li>
@@ -334,11 +384,16 @@
     hosted service already is:
   </p>
   <ul>
-    <li><strong>Hosted storage</strong> — a copy of your vocabulary kept for
-      you, so a new phone can pick it up where the old one left off. It does
-      not exist yet, and nothing of yours is stored anywhere but your own
-      phone until this page says otherwise.</li>
+    <li><strong>Hosted storage</strong> — a copy of your vocabulary kept by
+      Word Garner’s own service, so that, for example, an Android phone could
+      share a vocabulary with an iPhone. It does not exist yet, and nothing of
+      yours is stored by us until this page says otherwise.</li>
   </ul>
+  <p>
+    Sync between your own Apple devices now exists, and it is not this: it
+    keeps your vocabulary in <a href="#icloud">your own iCloud</a>, where we
+    cannot see it, and it is off unless you turn it on.
+  </p>
   <p>
     The hosted engine used to sit in this list. It now exists, and
     <a href="#hosted">what it sends, what it keeps and how to delete it</a> is

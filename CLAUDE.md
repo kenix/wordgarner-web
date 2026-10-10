@@ -173,12 +173,18 @@ other way round, and the app is built to it.
 The claims that would break first:
 
 - "no analytics, advertising or tracking"
-- "two things can ever leave your device, and you ask for each of them" —
-  text through Lexis once you sign in, and a dictionary pack from GitHub.
-  It was *one* until the packs shipped, *three* while the app also took an
-  API key of the reader's own, and *two* again since keys were removed on
-  2026-09-27. The summary panel has had to be recounted each time; a new
-  flow breaks the sentence again.
+- "three things can ever leave your device, and you ask for each of them" —
+  text through Lexis once you sign in, a dictionary pack from GitHub, and
+  the vocabulary to the reader's *own* iCloud once iCloud sync is on
+  (2026-10-10). It was *one* until the packs shipped, *three* while the app
+  also took an API key of the reader's own, *two* after keys were removed on
+  2026-09-27, and *three* again with sync. The summary panel has had to be
+  recounted each time; a new flow breaks the sentence again.
+- "it never reaches us" for iCloud sync — CloudKit's *private* database of
+  the reader's Apple ID, no server of ours in the path. Data the developer
+  cannot access is not "collected" for either store's privacy answers, which
+  is why sync adds nothing there. A sync through Lexis (Android) would break
+  this and move hosted storage out of *What might change*.
 - "the app no longer takes an API key of your own" — on the privacy, terms,
   home and support pages. Keys coming back means all four change first.
 - "a word up to 40 characters, a phrase 80, a sentence 300; Chinese,
@@ -192,7 +198,8 @@ The claims that would break first:
   repeats can be counted. Logging the word instead breaks it.
 - "OpenAI" as the named sub-processor. Changing provider means changing
   this page first.
-- "the daily reminder is a local notification … there is no push service"
+- "the only push notification is the silent one Apple sends while iCloud
+  sync is on" — the reminder is still local. Any visible push breaks it.
 - "this site sets no cookies, runs no analytics and loads nothing from
   anybody else: no third-party scripts, and no font network" — the
   wordmark font is served from this site, and that is the whole reason the
